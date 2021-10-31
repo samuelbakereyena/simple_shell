@@ -1,0 +1,78 @@
+.TH SHELL 1.0 "31 October 2021" GNU "Shell man page"
+.SH NAME
+.B hsh
+- command line interpreter (shell)
+.SH SYNOPSIS
+The shell is executed by typing ./hsh
+.br
+Then, it will wait for an input such as : command [arguments] [other]
+.SH DESCRIPTION
+This shell is a project dedicated to our mentor Maarten van Middelaar. I and my partner, have tried to mimic him so much but soon we shall be like him. A shell is a command language interpreter that executes commands read from the stardand input or from a file. Our shell does not support the arguments passed to it yet, we are still working on it.
+.br
+.B what hsh can do :
+.br
+- Executes any command with its arguments
+.br
+- Executes built-in commands
+.br
+- Handle pipes
+.br
+- Handle the command seperator ;
+.br
+- Handle && and || logical operators
+.br
+- Handle variable replacement
+.br
+- Handle the $? variable
+.br
+- Handle the $$ variable
+.SH BUILT-IN FUNCTIONS
+Those are the available built-in functions :
+.br
+- exit : exit the shell
+.br
+- cd : change Directory
+.br
+- Help : Display the help page
+.br
+- History : Display history of commands used
+.br
+- Alias : Put an alias for a command
+.br
+- Env : Display the environment variables
+.SH OPTIONS
+There are no options for the moment.
+.SH EXIT STATUS
+The exit value dependson how a function has terminated. Every error is identified by a certain value. On success it will always return 0.
+.SH RETURN VALUE
+Return 0 on success, otherwise it will return the exit value.
+.SH ENVIRONMENT
+- PATH
+.br
+- $?
+.br
+- $$
+.SH BUGS
+There is no known bugs at the moment.
+.SH EXAMPLE
+.B Two ways to execute our shell :
+.br
+.B The interactive mode :
+.br
+$ ./hsh
+.br
+#cisfun$ /bin/ls
+.br
+hsh main.c shell.c
+.br
+#cisfun$ exit
+.br
+$
+.br
+.B The non-interactive mode :
+.br
+$ echo "/bin/ls" | ./hsh
+.br
+hsh main.c shell.c
+.SH AUTHORS
+Elisa Hezikiah Dimiti, Eyena Samuel Baker 
