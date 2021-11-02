@@ -1,5 +1,6 @@
 #include "shell.h"
 
+
 /**
  * _getenv - gets the value of the global variable
  * @name: name of the global variable
@@ -33,6 +34,7 @@ char *_getenv(const char *name)
 	}
 	return (0);
 }
+
 
 /**
  * add_node_end - adds a new node at the end of a list_t list
@@ -76,6 +78,7 @@ list_path *add_node_end(list_path **head, char *str)
 
 	return (*head);
 }
+
 
 /**
  * linkpath - creates a linked list for path directories
@@ -123,4 +126,21 @@ char *_which(char *filename, list_path *head)
 	}
 
 	return (NULL);
+}
+
+/**
+ * free_list - frees a list_t
+ * @head: pointer to our linked list
+ */
+void free_list(list_path *head)
+{
+	list_path *storage;
+
+	while (head)
+	{
+		storage = head->p;
+		free(head->dir);
+		free(head);
+		head = storage;
+	}
 }
